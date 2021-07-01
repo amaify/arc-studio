@@ -1,0 +1,42 @@
+.footer {
+	display: flex;
+	align-items: center;
+	position: relative;
+	// padding: 4rem 0;
+
+	&-logo {
+		padding: 40px 26.5px;
+		background: $very-dark-blue;
+	}
+
+	&-links {
+		list-style: none;
+		display: flex;
+		background: $very-light-grey;
+		padding: 53px 100px;
+		width: 80%;
+
+		&__item {
+			&:not(:last-child) {
+				margin-right: 5rem;
+			}
+
+			& a {
+				text-decoration: none;
+				font-size: 1.4rem;
+				font-weight: 500;
+				color: $dark-grey;
+			}
+		}
+	}
+
+	&-button {
+		width: 20%;
+		// padding: 1.5rem 1rem;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translate(0, -50%);
+		text-align: center;
+	}
+}

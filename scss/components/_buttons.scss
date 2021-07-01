@@ -1,0 +1,24 @@
+.button-1 {
+	text-decoration: none;
+	text-transform: capitalize;
+
+	color: $very-light-grey;
+	background: $very-dark-blue;
+	font-size: 1.5rem;
+	padding: 1.5rem 2.5rem;
+
+	&:hover > span:last-child {
+		transform: translateX(20%);
+	}
+
+	& span {
+		display: inline-block;
+		vertical-align: middle;
+		transition: all 0.3s;
+		backface-visibility: hidden;
+
+		&:first-child {
+			margin-right: 2rem;
+		}
+	}
+}

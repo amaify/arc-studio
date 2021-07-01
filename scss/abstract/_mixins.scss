@@ -1,0 +1,34 @@
+@mixin overlay {
+	&::before {
+		content: "";
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		top: 0;
+		left: 0;
+		display: block;
+		position: absolute;
+		z-index: 1;
+	}
+}
+
+@mixin light-overlay {
+	&::before {
+		content: "";
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.2);
+		top: 0;
+		left: 0;
+		display: block;
+		position: absolute;
+		z-index: 1;
+	}
+}
+
+@mixin imageSetting {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+}
