@@ -1,0 +1,167 @@
+.heritage {
+	margin-bottom: 20rem;
+
+	&-content {
+		display: flex;
+
+		&__texts {
+			width: 35%;
+			margin-right: auto;
+
+			&--heading {
+				font-size: 3.5rem;
+				font-weight: 700;
+				margin-bottom: 5rem;
+				// align-self: flex-start;
+
+				& span:not(:last-child) {
+					display: block;
+				}
+
+				&::before {
+					content: "";
+					width: 7%;
+					height: 1px;
+					border-bottom: 1px solid $light-grey;
+					background: $light-grey;
+					display: block;
+					margin-bottom: 8rem;
+				}
+			}
+
+			&--text {
+				font-size: 1.4rem;
+				color: $dark-grey;
+				line-height: 2.5rem;
+
+				& span:not(:last-child) {
+					display: block;
+					margin-bottom: 2.5rem;
+				}
+			}
+		}
+
+		&__img {
+			width: 40%;
+			// height: 568px;
+
+			& img {
+				@include imageSetting;
+			}
+		}
+	}
+}
+
+.leaders {
+	&-content {
+		display: flex;
+
+		&__heading {
+			margin-right: auto;
+			width: 20%;
+
+			&--title {
+				font-size: 3.5rem;
+				font-weight: 700;
+				margin-bottom: 5rem;
+				// align-self: flex-start;
+
+				& span:not(:last-child) {
+					display: block;
+				}
+			}
+		}
+
+		&__cards {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: end;
+			width: 70%;
+
+			&--img {
+				// margin-right: 1.5rem;
+				margin-bottom: 10rem;
+				width: 45%;
+				height: 350px;
+				position: relative;
+
+				&:hover {
+					cursor: pointer;
+
+					&::before {
+						content: "";
+						width: 100%;
+						height: 100%;
+						background: rgba(0, 0, 0, 0.5);
+						top: 0;
+						left: 0;
+						display: block;
+						position: absolute;
+						z-index: 1;
+						animation-name: fadeIn;
+						animation-duration: 0.6s;
+						animation-timing-function: ease-in-out;
+
+						// transition: all 0.5s ease-in-out;
+					}
+				}
+
+				&:hover .leaders-content__cards--media {
+					opacity: 1;
+					top: 50%;
+				}
+
+				&:not(:nth-child(even)) {
+					margin-right: 3rem;
+				}
+
+				& img {
+					@include imageSetting;
+				}
+			}
+
+			&--caption {
+				& span:not(:last-child) {
+					display: block;
+					font-size: 1.5rem;
+					font-weight: 700;
+					margin-top: 1.5rem;
+					margin-bottom: 0.5rem;
+					color: $very-dark-blue;
+				}
+
+				& span:last-child {
+					color: $dark-grey;
+				}
+			}
+
+			&--media {
+				display: flex;
+				position: absolute;
+				top: 30%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				opacity: 0;
+				transition: all 0.6s ease-in-out;
+				z-index: 3;
+
+				& a:first-child {
+					margin-right: 2.5rem;
+				}
+
+				& a:last-child {
+					align-self: end;
+				}
+			}
+		}
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

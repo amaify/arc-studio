@@ -1,0 +1,82 @@
+.sharedHero {
+	margin-top: 1rem;
+	margin-bottom: 15rem;
+
+	&-link {
+		top: 100px;
+		left: -237px;
+	}
+
+	&-contents {
+		display: flex;
+		position: relative;
+
+		&__img {
+			width: 53%;
+			height: 600px;
+			position: relative;
+
+			@include overlay;
+
+			& img {
+				// @include imageSetting;
+				width: 100%;
+				height: 100%;
+				display: block;
+				// object-fit: cover;
+			}
+		}
+
+		&__texts {
+			background: #ffffff;
+			display: flex;
+			flex-direction: column;
+			justify-content: end;
+			// align-items: end;
+			padding: 0 0 0 20rem;
+			width: 67%;
+			height: 440px;
+			position: absolute;
+			bottom: 0;
+			right: -83px;
+			z-index: 3;
+
+			&--block {
+				position: absolute;
+				top: 30px;
+				left: 465px;
+				font-size: 20rem;
+				color: $very-light-grey;
+				z-index: 3;
+			}
+
+			&--heading {
+				font-size: 3.5rem;
+				font-weight: 700;
+				margin-bottom: 3rem;
+				// align-self: flex-start;
+
+				& span:not(:last-child) {
+					display: block;
+				}
+
+				&::before {
+					content: "";
+					width: 7%;
+					height: 1px;
+					border-bottom: 1px solid $light-grey;
+					background: $light-grey;
+					display: block;
+					margin-bottom: 6rem;
+				}
+			}
+
+			&--text {
+				width: 80%;
+				line-height: 2.5rem;
+				font-size: 1.5rem;
+				color: $dark-grey;
+			}
+		}
+	}
+}

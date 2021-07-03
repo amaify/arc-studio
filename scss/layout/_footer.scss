@@ -26,6 +26,12 @@
 				font-size: 1.4rem;
 				font-weight: 500;
 				color: $dark-grey;
+				transition: all 0.3s ease-in-out;
+
+				&:hover,
+				&:active {
+					color: $very-dark-blue;
+				}
 			}
 		}
 	}
@@ -38,5 +44,11 @@
 		right: 0;
 		transform: translate(0, -50%);
 		text-align: center;
+		transition: all 0.3s ease-in-out;
+
+		&:hover,
+		&:active {
+			background: $dark-grey;
+		}
 	}
 }

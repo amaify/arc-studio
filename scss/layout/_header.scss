@@ -47,6 +47,25 @@
 				color: $dark-grey;
 				font-size: 1.2rem;
 				font-weight: 500;
+				transition: all 0.1s ease-in-out;
+
+				&:hover,
+				&:active {
+					color: $very-dark-blue;
+				}
+			}
+
+			& .nav-active {
+				color: $very-dark-blue;
+
+				&::after {
+					content: "";
+					display: block;
+					width: 45%;
+					height: 1.5px;
+					background: $very-dark-blue;
+					margin: 1rem auto 0 auto;
+				}
 			}
 		}
 	}

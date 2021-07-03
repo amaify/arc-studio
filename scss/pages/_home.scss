@@ -1,19 +1,26 @@
 .intro {
 	position: relative;
 	margin-bottom: 23rem;
-	// width: 100%;
-	// height: 10vh;
+
+	&-container {
+		display: flex;
+		width: 100%;
+		overflow: hidden;
+	}
 
 	&-wrapper {
-		animation-name: fade;
-		animation-duration: 1.5s;
-		animation-timing-function: ease-in;
+		// animation-name: fade;
+		// animation-duration: 1.5s;
+		// animation-timing-function: ease-in;
+		flex-shrink: 0;
+		width: 100%;
+		position: relative;
 	}
 
 	&-background {
 		width: 100%;
 		height: 600px;
-		position: relative;
+		// position: relative;
 
 		&:before {
 			content: "";
@@ -60,12 +67,21 @@
 			margin-bottom: 4rem;
 			width: 60%;
 		}
+
+		& .button {
+			transition: all 0.3s ease-in-out;
+
+			&:hover,
+			&:active {
+				background: $medium-grey;
+			}
+		}
 	}
 
 	&-button {
 		position: absolute;
 		bottom: 0;
-		left: -51.5px;
+		left: -51.8px;
 		z-index: 3;
 
 		&__items {
@@ -78,11 +94,16 @@
 				font-weight: 500;
 				background: #ffffff;
 				cursor: pointer;
+				transition: all 0.3s ease-in-out;
 
 				// &:first-child {
 				// 	background: $very-dark-blue;
 				// 	color: $very-light-grey;
 				// }
+
+				&:hover {
+					background: $very-light-grey;
+				}
 			}
 		}
 
@@ -193,6 +214,15 @@
 				display: block;
 			}
 		}
+
+		& .button {
+			transition: all 0.3s ease-in-out;
+
+			&:hover,
+			&:active {
+				background: $medium-grey;
+			}
+		}
 	}
 }
 
@@ -205,6 +235,15 @@
 
 		&__header {
 			margin-right: auto;
+		}
+
+		& .button {
+			transition: all 0.3s ease-in-out;
+
+			&:hover,
+			&:active {
+				background: $dark-grey;
+			}
 		}
 	}
 
