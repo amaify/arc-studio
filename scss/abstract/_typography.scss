@@ -4,8 +4,12 @@
 }
 
 .h1-small {
-	font-size: 5rem;
+	font-size: 3rem;
 	font-weight: 700;
+
+	@include responsive__mode(tablet-portrait) {
+		font-size: 5rem;
+	}
 }
 
 .h2 {

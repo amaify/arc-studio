@@ -1,24 +1,42 @@
 .footer {
-	display: flex;
-	align-items: center;
-	position: relative;
-	// padding: 4rem 0;
+	padding: 0 0;
+
+	&-contents {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		width: 100%;
+	}
+
+	&-items {
+		position: relative;
+		width: 100%;
+		padding: 6rem 0;
+		background: $very-light-grey;
+	}
 
 	&-logo {
-		padding: 40px 26.5px;
+		padding: 4rem 2rem;
 		background: $very-dark-blue;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 
 	&-links {
 		list-style: none;
 		display: flex;
+		flex-direction: column;
+		align-items: center;
 		background: $very-light-grey;
-		padding: 53px 100px;
-		width: 80%;
+		padding: 5rem 0 7rem 0;
+		width: 100%;
 
 		&__item {
 			&:not(:last-child) {
-				margin-right: 5rem;
+				margin-right: 0;
+				margin-bottom: 2.5rem;
 			}
 
 			& a {
@@ -37,18 +55,230 @@
 	}
 
 	&-button {
-		width: 20%;
-		// padding: 1.5rem 1rem;
+		width: 80%;
 		position: absolute;
-		top: 50%;
-		right: 0;
-		transform: translate(0, -50%);
+		top: 80%;
+		right: 50%;
+		transform: translate(50%, -50%);
 		text-align: center;
 		transition: all 0.3s ease-in-out;
+	}
 
-		&:hover,
-		&:active {
-			background: $dark-grey;
+	@include responsive__mode(tablet-portrait) {
+		padding: 0;
+
+		&-contents {
+			display: flex;
+			flex-direction: row;
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+		}
+
+		&-items {
+			position: relative;
+			width: 90%;
+			padding: 0 0;
+			overflow: hidden;
+			background: $very-light-grey;
+		}
+
+		&-logo {
+			padding: 4rem 1rem 6rem 1rem;
+			background: $very-dark-blue;
+
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: translate(0, 0);
+		}
+
+		&-links {
+			list-style: none;
+			display: flex;
+			flex-direction: row;
+			padding: 5rem 0 5rem 16rem;
+			width: 100%;
+
+			&__item {
+				&:not(:last-child) {
+					margin-right: 3rem;
+					margin-bottom: 0;
+				}
+
+				& a {
+					text-decoration: none;
+					font-size: 1.4rem;
+					font-weight: 500;
+					color: $dark-grey;
+					transition: all 0.3s ease-in-out;
+
+					&:hover,
+					&:active {
+						color: $very-dark-blue;
+					}
+				}
+			}
+		}
+
+		&-button {
+			width: 30%;
+			padding: 1rem 1.5rem;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translate(0, -50%);
+			font-size: 1rem;
+			text-align: center;
+			transition: all 0.3s ease-in-out;
+		}
+	}
+
+	@include responsive__mode(tablet-landscape) {
+		padding: 0;
+
+		&-contents {
+			display: flex;
+			flex-direction: row;
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+		}
+
+		&-items {
+			position: relative;
+			width: 90%;
+			padding: 0 0;
+			overflow: hidden;
+			background: $very-light-grey;
+		}
+
+		&-logo {
+			padding: 4rem 2rem 6rem 2rem;
+			background: $very-dark-blue;
+
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: translate(0, 0);
+		}
+
+		&-links {
+			list-style: none;
+			display: flex;
+			flex-direction: row;
+			padding: 5rem 5rem 5rem 20rem;
+			width: 100%;
+
+			&__item {
+				&:not(:last-child) {
+					margin-right: 5rem;
+					margin-bottom: 0;
+				}
+
+				& a {
+					text-decoration: none;
+					font-size: 1.4rem;
+					font-weight: 500;
+					color: $dark-grey;
+					transition: all 0.3s ease-in-out;
+
+					&:hover,
+					&:active {
+						color: $very-dark-blue;
+					}
+				}
+			}
+		}
+
+		&-button {
+			width: 25%;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translate(0, -50%);
+			text-align: center;
+			font-size: 1rem;
+			transition: all 0.3s ease-in-out;
+
+			&:hover,
+			&:active {
+				background: $dark-grey;
+			}
+		}
+	}
+
+	@include responsive__mode(desktop) {
+		padding: 0;
+
+		&-contents {
+			display: flex;
+			flex-direction: row;
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+		}
+
+		&-items {
+			position: relative;
+			width: 90%;
+			padding: 0 0;
+			overflow: hidden;
+			background: $very-light-grey;
+		}
+
+		&-logo {
+			padding: 4rem 2rem 6rem 2rem;
+			background: $very-dark-blue;
+
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: translate(0, 0);
+		}
+
+		&-links {
+			list-style: none;
+			display: flex;
+			flex-direction: row;
+			padding: 5rem 20rem 5rem 20rem;
+			width: 100%;
+
+			&__item {
+				&:not(:last-child) {
+					margin-right: 5rem;
+					margin-bottom: 0;
+				}
+
+				& a {
+					text-decoration: none;
+					font-size: 1.4rem;
+					font-weight: 500;
+					color: $dark-grey;
+					transition: all 0.3s ease-in-out;
+
+					&:hover,
+					&:active {
+						color: $very-dark-blue;
+					}
+				}
+			}
+		}
+
+		&-button {
+			width: 23%;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translate(0, -50%);
+			text-align: center;
+			font-size: 1.5rem;
+			transition: all 0.3s ease-in-out;
+
+			&:hover,
+			&:active {
+				background: $dark-grey;
+			}
 		}
 	}
 }

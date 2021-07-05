@@ -1,18 +1,18 @@
 .heritage {
-	margin-bottom: 20rem;
+	margin-bottom: 10rem;
 
 	&-content {
 		display: flex;
+		padding: 0 2rem;
 
 		&__texts {
-			width: 35%;
-			margin-right: auto;
+			width: 100%;
+			margin-right: 0;
 
 			&--heading {
 				font-size: 3.5rem;
 				font-weight: 700;
 				margin-bottom: 5rem;
-				// align-self: flex-start;
 
 				& span:not(:last-child) {
 					display: block;
@@ -20,12 +20,11 @@
 
 				&::before {
 					content: "";
-					width: 7%;
-					height: 1px;
+					width: 15%;
 					border-bottom: 1px solid $light-grey;
 					background: $light-grey;
 					display: block;
-					margin-bottom: 8rem;
+					margin-bottom: 5rem;
 				}
 			}
 
@@ -42,29 +41,81 @@
 		}
 
 		&__img {
-			width: 40%;
-			// height: 568px;
+			display: none;
+		}
+	}
 
-			& img {
-				@include imageSetting;
+	@include responsive__mode(tablet-portrait) {
+		margin-bottom: 20rem;
+
+		&-content {
+			display: flex;
+
+			&__texts {
+				&--heading {
+					&::before {
+						width: 10%;
+					}
+				}
+			}
+		}
+	}
+
+	@include responsive__mode(tablet-landscape) {
+		margin-bottom: 20rem;
+
+		&-content {
+			display: flex;
+
+			&__texts {
+				width: 45%;
+				margin-right: auto;
+
+				&--heading {
+					&::before {
+						width: 7%;
+
+						margin-bottom: 8rem;
+					}
+				}
+			}
+
+			&__img {
+				width: 40%;
+				display: block;
+
+				& img {
+					@include imageSetting;
+				}
+			}
+		}
+	}
+
+	@include responsive__mode(desktop) {
+		&-content {
+			&__texts {
+				width: 35%;
 			}
 		}
 	}
 }
 
 .leaders {
+	margin-bottom: 10rem;
+
 	&-content {
 		display: flex;
+		padding: 0 2rem;
+		flex-direction: column;
 
 		&__heading {
 			margin-right: auto;
-			width: 20%;
+			width: 100%;
 
 			&--title {
 				font-size: 3.5rem;
 				font-weight: 700;
 				margin-bottom: 5rem;
-				// align-self: flex-start;
 
 				& span:not(:last-child) {
 					display: block;
@@ -76,13 +127,12 @@
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: end;
-			width: 70%;
+			width: 100%;
 
 			&--img {
-				// margin-right: 1.5rem;
-				margin-bottom: 10rem;
-				width: 45%;
-				height: 350px;
+				margin-bottom: 17rem;
+				width: 100%;
+				height: 284px;
 				position: relative;
 
 				&:hover {
@@ -95,24 +145,17 @@
 						background: rgba(0, 0, 0, 0.5);
 						top: 0;
 						left: 0;
-						display: block;
+						display: none;
 						position: absolute;
 						z-index: 1;
 						animation-name: fadeIn;
 						animation-duration: 0.6s;
 						animation-timing-function: ease-in-out;
-
-						// transition: all 0.5s ease-in-out;
 					}
 				}
 
-				&:hover .leaders-content__cards--media {
-					opacity: 1;
-					top: 50%;
-				}
-
 				&:not(:nth-child(even)) {
-					margin-right: 3rem;
+					margin-right: 0;
 				}
 
 				& img {
@@ -121,6 +164,8 @@
 			}
 
 			&--caption {
+				margin-bottom: 1.5rem;
+
 				& span:not(:last-child) {
 					display: block;
 					font-size: 1.5rem;
@@ -137,23 +182,184 @@
 
 			&--media {
 				display: flex;
-				position: absolute;
-				top: 30%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				opacity: 0;
-				transition: all 0.6s ease-in-out;
+
+				opacity: 1;
 				z-index: 3;
 
-				& a:first-child {
+				& a {
 					margin-right: 2.5rem;
 				}
 
 				& a:last-child {
-					align-self: end;
+					align-self: center;
+				}
+
+				&-desktop {
+					display: none;
 				}
 			}
 		}
+	}
+
+	@include responsive__mode(tablet-portrait) {
+		margin-bottom: 0;
+
+		&-content {
+			display: flex;
+			padding: 0 0;
+
+			&__heading {
+				width: 20%;
+			}
+
+			&__cards {
+				&--img {
+					margin-bottom: 15rem;
+					width: 48%;
+					height: 256px;
+
+					&:hover {
+						cursor: pointer;
+					}
+
+					&:not(:nth-child(even)) {
+						margin-right: 1rem;
+					}
+				}
+
+				&--media {
+					display: flex;
+
+					transition: all 0.6s ease-in-out;
+					align-items: center;
+
+					& a:first-child {
+						margin-right: 2.5rem;
+					}
+
+					& a:last-child {
+						align-self: center;
+					}
+
+					&-mobile {
+						display: block;
+					}
+
+					&-desktop {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	@include responsive__mode(tablet-landscape) {
+		margin-bottom: 0;
+
+		&-content {
+			display: flex;
+			padding: 0 0;
+			flex-direction: row;
+
+			&__heading {
+				&--title {
+					& span:not(:last-child) {
+						display: block;
+					}
+				}
+			}
+
+			&__cards {
+				width: 70%;
+
+				&--img {
+					margin-bottom: 10rem;
+					width: 45%;
+					height: 350px;
+					position: relative;
+
+					&:hover {
+						cursor: pointer;
+
+						&::before {
+							content: "";
+							width: 100%;
+							height: 100%;
+							background: rgba(0, 0, 0, 0.5);
+							top: 0;
+							left: 0;
+							display: block;
+							position: absolute;
+							z-index: 1;
+							animation-name: fadeIn;
+							animation-duration: 0.6s;
+							animation-timing-function: ease-in-out;
+						}
+					}
+
+					&:hover .leaders-content__cards--media {
+						opacity: 1;
+						top: 50%;
+					}
+
+					&:not(:nth-child(even)) {
+						margin-right: 3rem;
+					}
+				}
+
+				&--media {
+					display: flex;
+					position: absolute;
+					top: 30%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					opacity: 0;
+					transition: all 0.6s ease-in-out;
+					z-index: 3;
+
+					& a:first-child {
+						margin-right: 2.5rem;
+					}
+
+					& a:last-child {
+						align-self: baseline;
+					}
+
+					&-mobile {
+						display: none;
+					}
+
+					&-desktop {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include responsive__mode(tablet-portrait) {
+	.aboutHero-link {
+		top: 95px;
+		left: calc(-225px / 2);
+	}
+}
+
+@include responsive__mode(tablet-landscape) {
+	.aboutHero-link {
+		left: calc(-340px / 2);
+	}
+}
+
+@include responsive__mode(desktop) {
+	.aboutHero-link {
+		left: calc(-385px / 2);
+	}
+}
+
+@include responsive__mode(desktop-large) {
+	.aboutHero-link {
+		left: calc(-500px / 2);
 	}
 }
 
