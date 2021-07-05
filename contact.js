@@ -5,6 +5,10 @@ let submitBtn = document.querySelector(".contact-form__button");
 let error = document.querySelectorAll(".contact-form__group--error");
 let inputValue;
 
+let nameInput = document.getElementById("name");
+let emailInput = document.getElementById("email");
+let messageInput = document.getElementById("message");
+
 document.getElementById("name").addEventListener("blur", validateName);
 document.getElementById("email").addEventListener("blur", validateEmail);
 document.getElementById("message").addEventListener("blur", validateMessage);
@@ -62,15 +66,16 @@ function clearForm() {
 submitBtn.addEventListener("click", (e) => {
 	e.preventDefault();
 
-	for (let i = 0; i < formInput.length; i++) {
-		if (formInput[i].value === "") {
-			validateName();
-			validateEmail();
-			validateMessage();
-			console.log("empty");
-		} else {
-			alert("Form Submitted!");
-		}
+	if (
+		nameInput.value !== "" &&
+		emailInput.value !== "" &&
+		messageInput.value !== ""
+	) {
+		alert("Form Submitted");
+	} else {
+		validateName();
+		validateEmail();
+		validateMessage();
 	}
 	clearForm();
 });
